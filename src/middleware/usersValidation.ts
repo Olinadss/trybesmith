@@ -17,8 +17,8 @@ const usernameValidation = (req: Request, res: Response, next: NextFunction) => 
     return res.status(StatusCode.UNPROCESSABLE_ENTITY).json({ error: 'Username must be a string' });
   }
   
-  if (username.length > MIN_CHARACTER) {
-    return res.status(422)
+  if (username.length < MIN_CHARACTER) {
+    return res.status(StatusCode.UNPROCESSABLE_ENTITY)
       .json({ error: 'Username must be longer than 2 characters' });
   }
 
@@ -40,7 +40,7 @@ const classeValidation = (req: Request, res: Response, next: NextFunction) => {
     return res.status(StatusCode.UNPROCESSABLE_ENTITY).json({ error: 'Classe must be a string' });
   }
 
-  if (classe.length > MIN_CHARACTER) {
+  if (classe.length < MIN_CHARACTER) {
     return res.status(StatusCode.UNPROCESSABLE_ENTITY)
       .json({ error: 'Classe must be longer than 2 characters' });
   }
@@ -51,11 +51,11 @@ const classeValidation = (req: Request, res: Response, next: NextFunction) => {
 const levelValidation = (req: Request, res: Response, next: NextFunction) => {
   const user: IUser = req.body;
 
-  const MIN_CHARACTER = 1;
-
   const { level } = user;
 
-  if (!level) {
+  const MIN_CHARACTER = 1;
+
+  if (typeof level !== 'number' && !level) {    
     return res.status(StatusCode.BAD_REQUEST).json({ error: 'Level is required' });
   }
 
@@ -63,7 +63,7 @@ const levelValidation = (req: Request, res: Response, next: NextFunction) => {
     return res.status(StatusCode.UNPROCESSABLE_ENTITY).json({ error: 'Level must be a number' });
   }
 
-  if (level > MIN_CHARACTER) {
+  if (level < MIN_CHARACTER) {    
     return res.status(StatusCode.UNPROCESSABLE_ENTITY)
       .json({ error: 'Level must be greater than 0' });
   }
@@ -86,7 +86,7 @@ const passwordValidation = (req: Request, res: Response, next: NextFunction) => 
     return res.status(StatusCode.UNPROCESSABLE_ENTITY).json({ error: 'Password must be a string' });
   }
 
-  if (password.length > MIN_CHARACTER) {
+  if (password.length < MIN_CHARACTER) {
     return res.status(StatusCode.UNPROCESSABLE_ENTITY)
       .json({ error: 'Password must be longer than 7 characters' });
   }
