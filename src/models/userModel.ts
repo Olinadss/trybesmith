@@ -32,7 +32,6 @@ const modelGetByUser = async (username: string): Promise<User> => {
     [username],
   );
   const [userSelect] = user as User[];
-  console.log(userSelect);
 
   return userSelect;
 };
