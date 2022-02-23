@@ -2,11 +2,6 @@ import jwt from 'jsonwebtoken';
 import 'dotenv/config';
 import { Payload } from '../interfaces/payload';
 
-// type Payload = {
-//   id: number
-//   username: string,
-// };
-
 const createToken = async (payload: Payload) => {
   const secret = String(process.env.JWT_SECRET); // https://dev.to/vitordelfino/autenticacao-com-jwt-22o7
   

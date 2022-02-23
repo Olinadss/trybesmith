@@ -26,4 +26,19 @@ const modelGetByName = async (username: string): Promise<Payload> => {
   return userSelect;
 };
 
-export { modelCreateUsers, modelGetByName };
+const modelGetByUser = async (username: string): Promise<User> => {
+  const [user] = await connection.execute(
+    'SELECT * FROM Trybesmith.Users WHERE username = ?',
+    [username],
+  );
+  const [userSelect] = user as User[];
+  console.log(userSelect);
+
+  return userSelect;
+};
+
+export { 
+  modelCreateUsers, 
+  modelGetByName,
+  modelGetByUser,
+};
