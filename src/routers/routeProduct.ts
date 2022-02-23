@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import controlerCreateProduct from '../controllers/constroller';
+import { controlerCreateProduct, controlerGetAllProducts } from '../controllers/productConstroller';
 import { nameValidation, amountValidation } from '../middleware/productValidation';
 import verifyToken from '../middleware/auth';
 
@@ -12,5 +12,7 @@ router.post(
   amountValidation,
   controlerCreateProduct,
 );
+
+router.get('/products', verifyToken, controlerGetAllProducts);
 
 export default router;

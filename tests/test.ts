@@ -362,7 +362,7 @@ describe.only("3 - Crie um endpoint para o cadastro de produtos", () => {
   });
 });
 
-describe("4 - Crie um endpoint para a listagem de produtos", () => {
+describe.only("4 - Crie um endpoint para a listagem de produtos", () => {
   let token: string;
 
   beforeEach(async () => {

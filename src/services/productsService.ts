@@ -1,5 +1,5 @@
 import { IProducts } from '../interfaces/products';
-import modelCreateProduct from '../models/userProduct';
+import { modelCreateProduct, modelAllProduct } from '../models/userProduct';
 
 const serviceCreateProduct = async (product: IProducts) => {
   const newProduct = await modelCreateProduct(product);
@@ -7,4 +7,13 @@ const serviceCreateProduct = async (product: IProducts) => {
   return newProduct;
 };
 
-export default serviceCreateProduct;
+const serviceGetAllProducts = async () => {
+  const products = await modelAllProduct();
+
+  return products;
+};
+
+export {
+  serviceCreateProduct,
+  serviceGetAllProducts,
+};
