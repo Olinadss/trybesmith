@@ -49,33 +49,6 @@ Neste projeto, você será capaz de:
 
 **Faça essas configurações também para as variáveis de ambiente usadas nesses arquivo:**
 
-`sd-014-b-project-blogs-api/config/config.js`
-
-```
-module.exports = {
-  development: {
-    username: process.env.MYSQL_USER,
-    password: process.env.MYSQL_PASSWORD,
-    database: 'Trybesmith',
-    host: process.env.HOSTNAME,
-    dialect: 'mysql',
-  },
-  test: {
-    username: process.env.MYSQL_USER,
-    password: process.env.MYSQL_PASSWORD,
-    database: 'Trybesmith',
-    host: process.env.HOSTNAME,
-    dialect: 'mysql',
-  },
-  production: {
-    username: process.env.MYSQL_USER,
-    password: process.env.MYSQL_PASSWORD,
-    database: 'Trybesmith',
-    host: process.env.HOSTNAME,
-    dialect: 'mysql',
-  },
-};
-```
 
 ##FEEDBACKS
 
