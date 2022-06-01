@@ -47,7 +47,9 @@ Neste projeto, você será capaz de:
 
 **Você irá precisar configurar as variáveis globais do MySQL.** Você pode usar esse [Conteúdo de variáveis de ambiente com NodeJS](https://blog.rocketseat.com.br/variaveis-ambiente-nodejs/) como referência.
 
-**Faça essas configurações também para as variáveis de ambiente usadas nesses arquivo:**
+4. Agora para fazer com que a api rode bastar dar o comando:
+
+  - npm start
 
 
 ##FEEDBACKS
