@@ -14,7 +14,7 @@ Eu criei alguns _endpoints_ que irão ler e escrever em um banco de dados, utili
 
 # Habilidades
 
-Neste projeto, você será capaz de:
+Neste projeto eu exercitei:
 
 - Declarar variáveis e funções com tipagens _Typescript_;
 
